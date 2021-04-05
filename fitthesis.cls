@@ -566,20 +566,6 @@ Management}{\@fit@EN}%
 
 \vfill
 
-\iftoggle{czech_used}{
-\mktxt@b{16}{\@abstract@EN}\noindent\@tabstract@EN
-}{
-  \ifslovak
-    \mktxt@b{16}{\@abstract@EN}\noindent\@tabstract@EN
-  \else
-    \ifenslovak
-      \mktxt@b{16}{\@abstract@SK}\noindent\@tabstract@CS
-    \fi
-  \fi
-}
-
-\vfill
-
 \ifczech
 \mktxt@b{16}{\@keywords@CS}\noindent\@tkeywords@CS
 \else
@@ -590,21 +576,7 @@ Management}{\@fit@EN}%
   \fi
 \fi
 
-\vfill
 
-\iftoggle{czech_used}{
-\mktxt@b{16}{\@keywords@EN}\noindent\@tkeywords@EN
-}{
-  \ifslovak
-    \mktxt@b{16}{\@keywords@EN}\noindent\@tkeywords@EN
-  \else
-    \ifenslovak
-      \mktxt@b{16}{\@keywords@SK}\noindent\@tkeywords@CS
-    \else
-      \mktxt@b{16}{\@keywords@CS}\noindent\@tkeywords@CS
-    \fi
-  \fi
-}
 
 \vfill
 
@@ -617,18 +589,6 @@ Management}{\@fit@EN}%
 %===================================================
 \newpage
 
-}
-
-%Rozsireny abstrakt / Extended abstract
-\newcommand\makeextendedabstract{%
-  \pagestyle{empty}%
-  \ifenslovak
-    \mktxt@b{16}{\@extendedabstract@SK}\noindent\@textendedabstract
-  \else
-    \mktxt@b{16}{\@extendedabstract@CS}\noindent\@textendedabstract
-  \fi
-  \newpage
-  \pagestyle{plain}
 }
 
 %-----------------------------------------------------------------------------
@@ -649,7 +609,6 @@ Management}{\@fit@EN}%
 \noindent\@declaration
 
   \begin{flushright}
-      \makebox[4cm]{\dotfill} \\
       \@author\\
       \@date
   \end{flushright}
@@ -934,16 +893,9 @@ Management}{\@fit@EN}%
     \mkuctxtt{10}{\ifenslovak\@author@SK\else\ifczech\@author@EN\else\@author@CS\fi\fi}
   }
 
-  \vspace{5mm}
 
-  \mktxtt{14}{\MakeUppercase{\ifslovak\@supervisor@SK\else\ifczech\@supervisor@CS\else\@supervisor@EN\fi\fi} \hfill \get@supervisor}
-  \iftoggle{slovak_used}{
-    \mkuctxtt{10}{\@supervisor@EN}
-  }{
-    \mkuctxtt{10}{\ifenslovak\@supervisor@SK\else\ifczech\@supervisor@EN\else\@supervisor@CS\fi\fi}
-  }
 
-  \vspace{10mm}
+  \vspace{20mm}
 
   \mktxtt{11}{BRNO \@year}
 
